@@ -1,18 +1,16 @@
-import React from 'react';
-
 interface Props{
     img: Item,
    
 }
 
 interface Item{
-    id:string,
     title: string,
     url: string
 }
 
-const GifGridItems = ({img: {id,title,url}}: Props) => {
+const GifGridItems = ({img}: Props) => {
 
+    const  {title="",url=""} = img;
     
     return (
         <div className="card animate__animated animate__bounce">

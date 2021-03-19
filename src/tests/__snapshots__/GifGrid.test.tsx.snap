@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas de <GifGrid /> should match to snapshot 1`] = `
+<Fragment>
+  <h1>
+    Naruto
+  </h1>
+  <p>
+    Loading...
+  </p>
+  <div
+    className="card-grid"
+  >
+    <GifGridItems
+      img={Object {}}
+    />
+  </div>
+</Fragment>
+`;

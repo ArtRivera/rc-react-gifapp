@@ -1,12 +1,16 @@
-import React,{ChangeEvent, Dispatch, FormEvent, SetStateAction, useState} from 'react';
+import React,{ChangeEvent, FormEvent, useState,useEffect} from 'react';
 
 interface Props{
-    setCategory: Dispatch<SetStateAction<string[]>>
+    setCategory: any
 }
 
 const AddCategory = ({setCategory}: Props) => {
 
-    const [inputValue, setInputValue] = useState('')
+    const [inputValue, setInputValue] = useState('');
+
+    useEffect(() => {
+        console.log(inputValue);
+    }, [inputValue])
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) =>{
         setInputValue(e.target.value);
@@ -14,8 +18,9 @@ const AddCategory = ({setCategory}: Props) => {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
+        
         if(inputValue.trim().length > 2){
-            setCategory(cats => [inputValue,...cats]);
+            setCategory((cats:any) => [inputValue,...cats]);
             setInputValue('');
         }
     }
